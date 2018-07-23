@@ -5,27 +5,35 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace AccesaEmployee
 {
 	class Program 
 	{
-		static void Main(string[] args)
-		{
-           
-           
+        static void Main(string[] args)
+        {
 
-			var officeManagement= new OfficeManagement();
-			/*officeManagement.DisplayAllProjects();
+
+
+
+
+            var officeManagement = new OfficeManagement();
+            /*officeManagement.DisplayAllProjects();
 
 			officeManagement.DeleteEmployee(dev);
 			officeManagement.DisplayAllEmployees();
 			officeManagement.DisplayAllProjects();*/
 
-			PopulateEmployeeList(officeManagement);
-			officeManagement.DisplayAllEmployees();
-			Console.ReadLine();
-		}
+            PopulateEmployeeList(officeManagement);
+            officeManagement.DisplayAllEmployees();
+            var employee = new Employee();
+    
+            employee.XmlName1();
+            employee.XmlName2();
+            Console.ReadLine();
+
+        }
 
         private static void PopulateEmployeeList(OfficeManagement officeManagement)
 		{

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,5 +24,9 @@ namespace AccesaEmployee
 			_technologyStack.ForEach(x => sb.Append(x + ", "));
 			Console.WriteLine("Technology stack: \r\n {0}", sb);
 		}
+        public void Json()
+        {
+            new JProperty("technologystack", _technologyStack);
+        }
 	}
 }

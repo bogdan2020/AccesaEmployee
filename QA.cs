@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,5 +22,9 @@ namespace AccesaEmployee
 			_testingTools.ForEach(x=>sb.Append(x+ ", "));
 			Console.WriteLine("Testing tools experience: \r\n {0}", sb);
 		}
+        public void Json()
+        {
+            new JProperty("testingtools", _testingTools);
+        }
 	}
 }

@@ -8,6 +8,7 @@ namespace AccesaEmployee
 {
 	public class Project
 	{
+        public const string XmlName = "Projects";
 		private readonly string _name;
 		private readonly string _description;
 		private DateTime _deadLine;

@@ -65,7 +65,7 @@ namespace AccesaEmployee
             //.Select(x => x.Team[employee])
             //.Sum();
 
-            if (employee.Capacity < currentAllocationHours + noOfHours)
+            if (employee.Capacity < AllocationHours + noOfHours)
                 return false;
 
             project.AddTeamMember(employee, noOfHours);

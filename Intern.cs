@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,15 @@ namespace AccesaEmployee
 		public EmployeePosition TargetPosition => _targetPosition;
 		public Intern(string name, float capacity) 
 			: base(name, EmployeePosition.Intern, capacity)
-		{
-		}
+        {
+
+        }
+        public void Json()
+        {
+          new  JProperty("UniversityName", _universityName);
+           new JProperty("YearOfStudy", _yearOfStudy);
+           new JProperty("TargetPosition", _targetPosition);
+
+        }
 	}
 }

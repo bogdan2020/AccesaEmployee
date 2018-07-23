@@ -17,7 +17,7 @@ namespace AccesaEmployee
 
         public string Name => _name;
         public EmployeePosition Position => _position;
-        public float Capacity => _capacity; ygy
+        public float Capacity => _capacity; 
         public List<string> Hobbies => _hobbies;
 
         protected Employee(string name, EmployeePosition position, float capacity)

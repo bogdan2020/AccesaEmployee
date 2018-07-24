@@ -28,9 +28,8 @@ namespace AccesaEmployee
             PopulateEmployeeList(officeManagement);
             officeManagement.DisplayAllEmployees();
             var employee = new Employee();
-    
-            employee.XmlName1();
-            employee.XmlName2();
+            
+            
             Console.ReadLine();
 
         }

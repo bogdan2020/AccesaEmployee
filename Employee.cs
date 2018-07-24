@@ -46,7 +46,7 @@ namespace AccesaEmployee
 
         public void XmlName2()
         {
-            foreach (Employee employee in Employees)
+          //  foreach (Employee employee in Employees)
             {
                 JObject emp = new JObject ();
                 new JProperty("Name", employee.Name);
@@ -72,7 +72,7 @@ namespace AccesaEmployee
                     writer.WriteStartDocument();
                     writer.WriteStartElement("Employees");
 
-                    foreach (Employee employee in Employees)
+                   // foreach (Employee employee in Employees)
                     {
                         writer.WriteStartElement("Employee");
                         writer.WriteElementString("Name", employee.Name.ToString());
@@ -91,7 +91,7 @@ namespace AccesaEmployee
                 {
                     reader.ReadStartElement();
 
-                    foreach (Employee employee in Employees)
+                  //  foreach (Employee employee in Employees)
                     {
                         reader.ReadStartElement("Employee");
                         reader.ReadElementString("Name", employee._name.ToString());

@@ -12,8 +12,8 @@ namespace AccesaEmployee
 	{
 		[DataMember]private readonly List<string> _technologyStack = new List<string>();
 
-		[DataMember]public List<string> TechnologyStack => _technologyStack;
-		[DataMember]public Dev(string name, float capacity) 
+		public List<string> TechnologyStack => _technologyStack;
+		public Dev(string name, float capacity) 
 			: base(name, EmployeePosition.DEV, capacity)
 		{
 		}

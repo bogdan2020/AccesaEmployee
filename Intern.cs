@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 namespace AccesaEmployee
 {
-	public class Intern:Employee
+	[DataContract] public class Intern:Employee
 	{
 		[DataMember] private string _universityName;
 		[DataMember] private int _yearOfStudy;

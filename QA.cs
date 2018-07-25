@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 namespace AccesaEmployee
 {
-	public class QA:Employee
+	[DataContract]public class QA:Employee
 	{
 		[DataMember] private readonly List<string> _testingTools = new List<string>();
 		public List<string> TestingTools => _testingTools;

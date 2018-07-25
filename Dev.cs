@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace AccesaEmployee
 {
-	public class Dev:Employee
+	[DataContract] public class Dev:Employee
 	{
-		private readonly List<string> _technologyStack = new List<string>();
+		[DataMember]private readonly List<string> _technologyStack = new List<string>();
 
-		public List<string> TechnologyStack => _technologyStack;
-		public Dev(string name, float capacity) 
+		[DataMember]public List<string> TechnologyStack => _technologyStack;
+		[DataMember]public Dev(string name, float capacity) 
 			: base(name, EmployeePosition.DEV, capacity)
 		{
 		}

@@ -15,6 +15,9 @@ namespace AccesaEmployee
 {
 	class Program 
 	{
+        public static object StreamWriter { get; private set; }
+
+
         static void Main(string[] args)
         {
             // XmlDocument myXml = new XmlDocument();
@@ -32,19 +35,24 @@ namespace AccesaEmployee
             officeManagement.DisplayAllEmployees();
             // var employee = new Employee();
 
-            string content = JsonConvert.SerializeObject(officeManagement);
-            File.WriteAllText("office.json", content);
+           // string content = JsonConvert.SerializeObject(officeManagement);
+           // File.WriteAllText("office.json", content);
 
             var ds = new DataContractSerializer(typeof(OfficeManagement));
-            MemoryStream stream = new MemoryStream();
-            ds.WriteObject(stream, officeManagement);
+          //  MemoryStream stream = new MemoryStream();
+          //  ds.WriteObject(stream, officeManagement);
 
-            using (Stream a = File.OpenRead("siguuur.xml"))
+            using (XmlWriter a = XmlWriter.Create("siguuur.xml"))
             {
                 ds.WriteObject(a, officeManagement);
             }
 
-            Console.ReadLine();
+            using (Stream s = File.OpenRead("siguuur.xml"))
+            {
+                officeManagement = (OfficeManagement)ds.ReadObject(s);
+            }
+            officeManagement.DisplayAllEmployees();
+                Console.ReadLine();
 
         }
 

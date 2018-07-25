@@ -8,10 +8,10 @@ using System.Runtime.Serialization;
 
 namespace AccesaEmployee
 {
-    public class OfficeManagement
+    [DataContract] public class OfficeManagement
     {
-        private readonly List<Employee> _employees = new List<Employee>();
-        private readonly List<Project> _projects = new List<Project>();
+       [DataMember] private readonly List<Employee> _employees = new List<Employee>();
+       [DataMember] private readonly List<Project> _projects = new List<Project>();
 
         public IReadOnlyCollection<Employee> Employees => _employees;
         public IReadOnlyCollection<Project> Projects => _projects;

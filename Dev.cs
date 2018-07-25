@@ -24,9 +24,9 @@ namespace AccesaEmployee
 			_technologyStack.ForEach(x => sb.Append(x + ", "));
 			Console.WriteLine("Technology stack: \r\n {0}", sb);
 		}
-        public void Json()
-        {
-            new JProperty("technologystack", _technologyStack);
-        }
+       // public void Json()
+       // {
+        //    new JProperty("technologystack", _technologyStack);
+       // }
 	}
 }

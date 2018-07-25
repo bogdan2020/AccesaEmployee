@@ -15,3 +15,4 @@ C:\Users\Bogdan.Barar\Downloads\AccesaEmployee\AccesaEmployee\obj\Debug\AccesaEm
 C:\Users\Bogdan.Barar\Downloads\AccesaEmployee\AccesaEmployee\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Bogdan.Barar\Downloads\AccesaEmployee\AccesaEmployee\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Bogdan.Barar\Downloads\AccesaEmployee\AccesaEmployee\obj\Debug\AccesaEmployee.csproj.CopyComplete
+C:\Users\Bogdan.Barar\Downloads\AccesaEmployee\AccesaEmployee\bin\Debug\System.Runtime.Serialization.Primitives.dll

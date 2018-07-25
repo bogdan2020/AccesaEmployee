@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Serialization;
+using System.Xml.XPath;
 
 namespace AccesaEmployee
 {
@@ -13,12 +17,11 @@ namespace AccesaEmployee
 	{
         static void Main(string[] args)
         {
-
-
-
-
-
-            var officeManagement = new OfficeManagement();
+            // XmlDocument myXml = new XmlDocument();
+            //XPathNavigator Xnav = myXml.CreateNavigator();
+            //XmlSerializer x = new XmlSerializer (myEmployee)
+             
+           var officeManagement = new OfficeManagement();
             /*officeManagement.DisplayAllProjects();
 
 			officeManagement.DeleteEmployee(dev);
@@ -27,9 +30,20 @@ namespace AccesaEmployee
 
             PopulateEmployeeList(officeManagement);
             officeManagement.DisplayAllEmployees();
-            var employee = new Employee();
-            
-            
+            // var employee = new Employee();
+
+            string content = JsonConvert.SerializeObject(officeManagement);
+            File.WriteAllText("office.json", content);
+
+            var ds = new DataContractSerializer(typeof(OfficeManagement));
+            MemoryStream stream = new MemoryStream();
+            ds.WriteObject(stream, officeManagement);
+
+            using (Stream a = File.OpenRead("siguuur.xml"))
+            {
+                ds.WriteObject(a, officeManagement);
+            }
+
             Console.ReadLine();
 
         }

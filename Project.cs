@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
+
 
 namespace AccesaEmployee
 {
-	public class Project
+	[DataContract] public class Project
 	{
-        public const string XmlName = "Projects";
-		private readonly string _name;
-		private readonly string _description;
-		private DateTime _deadLine;
-		private readonly Dictionary<Employee, float> _team = new Dictionary<Employee, float>();
+       [DataMember] public const string XmlName = "Projects";
+		[DataMember] private readonly string _name;
+		[DataMember] private readonly string _description;
+		[DataMember] private DateTime _deadLine;
+		[DataMember] private readonly Dictionary<Employee, float> _team = new Dictionary<Employee, float>();
 
 		public string Name => _name;
 		public string Description => _description;

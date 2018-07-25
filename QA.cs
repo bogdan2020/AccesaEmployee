@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace AccesaEmployee
 {
 	public class QA:Employee
 	{
-		private readonly List<string> _testingTools = new List<string>();
+		[DataMember] private readonly List<string> _testingTools = new List<string>();
 		public List<string> TestingTools => _testingTools;
 		public QA(string name, float capacity) : base(name, EmployeePosition.QA, capacity)
 		{
@@ -22,9 +23,9 @@ namespace AccesaEmployee
 			_testingTools.ForEach(x=>sb.Append(x+ ", "));
 			Console.WriteLine("Testing tools experience: \r\n {0}", sb);
 		}
-        public void Json()
-        {
-            new JProperty("testingtools", _testingTools);
-        }
+        //public void Json()
+       // {
+        //    new JProperty("testingtools", _testingTools);
+       // }
 	}
 }
